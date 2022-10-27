@@ -19,13 +19,22 @@ function App() {
   }
   function deleteItem(product) {
     console.log(product);
-    console.log(product.title);
+    console.log(product.id);
     console.log(shoppingCartList);
     console.log(shoppingCartList);
 
-    let indexOfTitle = shoppingCartList.indexOf(product.title);
-    console.log(indexOfTitle);
-    setShoppingCartList([shoppingCartList.splice(indexOfTitle, 1)]);
+    const indexOfproduct = shoppingCartList.indexOf(product);
+
+    console.log(indexOfproduct);
+    console.log(shoppingCartList[indexOfproduct]);
+
+    setShoppingCartList(
+      shoppingCartList.filter((item) => {
+        return item !== shoppingCartList[indexOfproduct];
+      })
+    );
+
+    setCartValue(0);
   }
 
   function deleteAll() {

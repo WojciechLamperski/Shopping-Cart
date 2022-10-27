@@ -34,7 +34,7 @@ function App() {
       })
     );
 
-    setCartValue(0);
+    setCartValue(cartValue - shoppingCartList[indexOfproduct].price);
   }
 
   function deleteAll() {
